@@ -1,0 +1,11 @@
+{
+    "files.associations": {
+        "comdef.h": "c",
+        "osal.h": "c",
+        "osal_config.h": "c",
+        "compare": "c",
+        "array": "c",
+        "string_view": "c",
+        "initializer_list": "c"
+    }
+}

@@ -25,7 +25,7 @@
   its documentation for any purpose.
 
   YOU FURTHER ACKNOWLEDGE AND AGREE THAT THE SOFTWARE AND DOCUMENTATION ARE
-  PROVIDED “AS IS” WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
+  PROVIDED ï¿½AS ISï¿½ WITHOUT WARRANTY OF ANY KIND, EITHER EXPRESS OR IMPLIED,
   INCLUDING WITHOUT LIMITATION, ANY WARRANTY OF MERCHANTABILITY, TITLE,
   NON-INFRINGEMENT AND FITNESS FOR A PARTICULAR PURPOSE. IN NO EVENT SHALL
   TEXAS INSTRUMENTS OR ITS LICENSORS BE LIABLE OR OBLIGATED UNDER CONTRACT,
@@ -54,8 +54,10 @@ extern "C"
 
 #include <limits.h>
 
-#include "comdef.h"
-#include "OSAL_Memory.h"
+#include "osal_config.h"
+#include "osal_types.h"
+#include "osal_hal.h"
+#include "osal_memory.h"
 #include "OSAL_Timers.h"
 
 #ifdef USE_ICALL
@@ -82,6 +84,10 @@ extern "C"
 #define OSAL_MSG_LEN(msg_ptr)      ((osal_msg_hdr_t *) (msg_ptr) - 1)->len
 
 #define OSAL_MSG_ID(msg_ptr)      ((osal_msg_hdr_t *) (msg_ptr) - 1)->dest_id
+
+#ifndef OSAL_ASSERT(expr)
+#define OSAL_ASSERT(expr)
+#endif
 
 /*********************************************************************
  * CONSTANTS
